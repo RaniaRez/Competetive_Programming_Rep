@@ -1,0 +1,9 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        lon_prf=""
+        pre=""
+        for i in strs[0]:
+            pre+=i
+            if all(string.startswith(pre) for string in strs):
+                lon_prf+=i
+        return lon_prf
