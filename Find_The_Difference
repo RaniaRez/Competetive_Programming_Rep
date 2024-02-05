@@ -1,0 +1,11 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        #Store the counts of S characters
+        counts={}
+        for char in s:
+            counts[char] = counts.get(char, 0) + 1
+        #Check which charatcter is added
+        for char in t:
+            if counts.get(char, 0) == 0:  
+                return char
+            counts[char] -= 1
