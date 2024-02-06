@@ -1,0 +1,11 @@
+if __name__ == '__main__':
+    lst=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        lst.append([name, score])
+    second_elements = sorted(set([sublist[1] for sublist in lst]))
+    first_elements =sorted([sublist[0] for sublist in lst if sublist[1] == second_elements[1]])
+    for student in first_elements:
+        print(student)
+        
