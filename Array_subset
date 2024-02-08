@@ -1,0 +1,12 @@
+def isSubset( a1, a2, n, m):
+    count_arr1 = {}
+    for element in a1:
+        count_arr1[element] = count_arr1.get(element, 0) + 1
+
+    # Check if each element in arr2 exists in arr1 with sufficient count.
+    for element in a2:
+        if element not in count_arr1 or count_arr1[element] < 1:
+            return "No"
+        count_arr1[element] -= 1  # Decrement count for each occurrence in arr2
+
+    return "Yes"
