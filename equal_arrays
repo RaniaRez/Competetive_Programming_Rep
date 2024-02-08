@@ -1,0 +1,15 @@
+class Solution:
+    #Function to check if two arrays are equal or not.
+    def check(self,A,B,N):
+        count_A={}
+        count_B={}
+        for elem in A:
+            count_A[elem]=count_A.get(elem, 0) + 1
+        for elem in B:
+            count_B[elem] = count_B.get(elem, 0) + 1
+            
+        for element, count in count_A.items():
+            if element not in count_B or count != count_B[element]:
+                return False
+
+        return True
