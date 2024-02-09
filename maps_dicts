@@ -1,0 +1,22 @@
+#Initialize n and the phone_book dictionnary
+n=int(input())
+phone_book={}
+
+#insert the key-value pairs to the dictionnary
+for _ in range(n):
+    entry=input().split()
+    phone_book[entry[0]]=entry[1]
+
+#Read the unknwon number of names entries
+while True:
+    try:
+        name = input()
+        if name in phone_book:
+            print(name, "=", phone_book[name], sep="")
+        else: 
+            print("Not found")
+    except:
+        break
+
+
+    
