@@ -4,6 +4,10 @@ class Solution:
         for i in range(len(nums)-1):
             if nums[i]>nums[i+1]:
                 count+=1
-        if (count==1) or (count==0):
+                idx=i
+        if (count==1) and (1<=idx<=len(nums)-3):
+            return(nums[idx]<=nums[idx+2]) or (nums[idx-1]<=nums[idx+1])
+        elif count>1:
+            return False      
+        else:
             return True
-        return False
