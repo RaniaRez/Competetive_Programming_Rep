@@ -1,0 +1,11 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        fst_row="qwertyuiop"
+        scd_row="asdfghjkl"
+        trd_row="zxcvbnm"
+        res=[]
+        for word in words:
+            if all(letter.lower() in fst_row for letter in word) or all(letter.lower() in scd_row for letter in word) or all(letter.lower() in trd_row for letter in word):
+                res.append(word)
+
+        return res
