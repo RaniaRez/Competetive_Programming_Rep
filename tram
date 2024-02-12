@@ -1,0 +1,10 @@
+n=int(input())
+ppl=0
+capacity=0
+for i in range(n):
+    _out, _in= map(int, input().split())
+    ppl+=_in
+    ppl-=_out
+    capacity=max(capacity, ppl)
+
+print(capacity)
