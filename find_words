@@ -4,8 +4,13 @@ class Solution:
         scd_row="asdfghjkl"
         trd_row="zxcvbnm"
         res=[]
+        
         for word in words:
-            if all(letter.lower() in fst_row for letter in word) or all(letter.lower() in scd_row for letter in word) or all(letter.lower() in trd_row for letter in word):
+            case_1=all(letter.lower() in fst_row for letter in word)
+            case_2=all(letter.lower() in scd_row for letter in word)
+            case_3= all(letter.lower() in trd_row for letter in word)
+
+            if case_1 or case_2 or case_3 :
                 res.append(word)
 
         return res
