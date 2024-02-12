@@ -5,9 +5,9 @@ class Solution:
             if nums[i]>nums[i+1]:
                 count+=1
                 idx=i
+                if count>1:
+                    return False
         if (count==1) and (1<=idx<=len(nums)-3):
-            return(nums[idx]<=nums[idx+2]) or (nums[idx-1]<=nums[idx+1])
-        elif count>1:
-            return False      
+            return(nums[idx]<=nums[idx+2]) or (nums[idx-1]<=nums[idx+1])    
         else:
             return True
