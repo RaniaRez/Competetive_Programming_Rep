@@ -1,0 +1,22 @@
+class Solution:
+    def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
+        str_lst1={}
+        str_lst2={}
+
+        for idx, val in enumerate(list1):
+            str_lst1[val]=idx
+        for idx, val in enumerate(list2):
+            str_lst2[val]=idx
+        
+        common_strings = list(set(str_lst1.keys()) & set(str_lst2.keys()))
+        print(common_strings)
+        min_sum=float('inf')
+
+        for common_string in common_strings:
+            index_sum = str_lst1[common_string] + str_lst2[common_string]
+            if index_sum < min_sum:
+                min_sum = index_sum
+
+        common_string_with_min_sum = [string for string in common_strings if (str_lst1[string] + str_lst2[string]==min_sum) ]
+        return  common_string_with_min_sum
+        
