@@ -1,0 +1,11 @@
+class Solution:
+    def escapeGhosts(self, ghosts: List[List[int]], target: List[int]) -> bool:
+
+        dist_ply_tgt=abs(target[0])+abs(target[1])
+
+        for ghost in ghosts:
+            dist_ghost_tgt=abs(target[0]- ghost[0])+abs(target[1]- ghost[1])
+            if dist_ghost_tgt<=dist_ply_tgt:
+                return False
+    
+        return True
