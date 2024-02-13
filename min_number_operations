@@ -1,0 +1,18 @@
+class Solution:
+    def minOperations(self, boxes: str) -> List[int]:
+        answer=[]
+        indices=[]
+
+        for i in range(len(boxes)):
+            if int(boxes[i]):
+                indices.append(i)
+    
+
+        for i in range(len(boxes)):
+            count=0
+            for idx in indices:
+                if i<idx or i>idx:
+                    count+=abs(i-idx)
+            answer.append(count)
+
+        return answer
