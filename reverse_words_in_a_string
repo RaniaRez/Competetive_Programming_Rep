@@ -1,0 +1,6 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        sentence= s.strip().split()
+        reversed_snt = reversed(sentence)
+        reversed_string = ' '.join(reversed_snt)
+        return reversed_string
