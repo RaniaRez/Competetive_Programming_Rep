@@ -1,11 +1,12 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
+        '''
         freq=defaultdict(int)
-
         for char in s:
             freq[char]+=1
-           
-
+I used default dict at the beginning, but Counter is better in performance
+     '''  
+        freq= Counter(s)
         for i in range(len(s)):
             char=s[i]
             if freq[char]==1:
