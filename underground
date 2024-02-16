@@ -1,6 +1,7 @@
 class UndergroundSystem:
 
     def __init__(self):
+        #I used defaultdict to avoid if/else statements in creating the dictionnaries in chech_in/check_out functions (check if the key is present or create it)
         self.check_in=defaultdict(tuple)
         self.check_out=defaultdict(list)
         
