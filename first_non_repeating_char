@@ -7,7 +7,6 @@ class Solution:
 I used default dict at the beginning, but Counter is better in performance
      '''  
         freq= Counter(s)
-        for i in range(len(s)):
-            char=s[i]
+        for i, char in enumerate(s):
             if freq[char]==1:
                 return i
