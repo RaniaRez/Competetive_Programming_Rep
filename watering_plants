@@ -1,0 +1,18 @@
+class Solution:
+    def wateringPlants(self, plants: List[int], capacity: int) -> int:
+        steps=1
+        upd_capacity=capacity
+        for pos in range(len(plants)-1):
+            
+            if plants[pos]<=upd_capacity:
+                upd_capacity-=plants[pos]
+
+                if upd_capacity>=plants[pos+1]:
+                    steps+=1
+                else:
+                    steps+=pos+1
+                    upd_capacity=capacity
+                    steps+=pos+2
+        
+        return steps
+        
