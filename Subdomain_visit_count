@@ -1,0 +1,17 @@
+class Solution:
+    def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
+        
+        pairs_count=defaultdict(int)
+        
+        for cp_domain in cpdomains:
+            n_visits=int(cp_domain.split()[0])
+            domain=cp_domain.split()[1]
+            parts = domain.split('.')
+            subdomains = [parts[i:] for i in range(len(parts))][::-1]
+            result=['.'.join(subdomain) for subdomain in subdomains]
+            for s_d in result:
+                pairs_count[s_d]+=n_visits
+
+        result_list = [f"{value} {key}" for key, value in pairs_count.items()]
+
+        return result_list
