@@ -1,0 +1,15 @@
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        row_len=len(matrix)
+        col_len=len(matrix[0])
+        tr_mtx=[[0]*row_len for _ in range(col_len)]
+        for row in range(col_len):
+            for col in range(row_len):
+                tr_mtx[row][col]=matrix[col][row]
+        return tr_mtx
+
+'''
+can do with lists comprehension
+matrix=[[row[i] for row in matrix] for i in range(len(matrix[0]))]
+return matrix
+'''
