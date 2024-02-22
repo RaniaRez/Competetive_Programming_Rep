@@ -1,0 +1,5 @@
+class Solution:
+    def minDeletionSize(self, strs: List[str]) -> int:
+        col=[[str_[j] for str_ in strs] for j in range(len(strs[0]))]
+        sorted_cols=[lst == sorted(lst) for lst in col]
+        return len(sorted_cols)-sum(sorted_cols)
