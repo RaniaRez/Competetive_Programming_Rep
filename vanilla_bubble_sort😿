@@ -8,3 +8,15 @@ class Solution:
                     names[j], names[j+1]=names[j+1], names[j]
         print(heights)
         return names
+#imporved bubble sort
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        continue_=True
+        while continue_:
+            continue_=False
+            for j in range(len(heights)-1):
+                if heights[j]<=heights[j+1]:
+                    heights[j], heights[j+1]=heights[j+1], heights[j]
+                    names[j], names[j+1]=names[j+1], names[j]
+                    continue_=True           
+        return names
