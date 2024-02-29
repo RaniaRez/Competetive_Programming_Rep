@@ -1,0 +1,27 @@
+class Solution:
+    def pancakeSort(self, A: List[int]) -> List[int]:
+
+        end=len(A)
+        res=[]
+        while end>1:
+            maxInd=A.index(end) 
+            #The biggest value we can have is at its right place
+            if maxInd==end-1:
+                #we will shift the focus to the second biggest number we can have
+                end-=1
+                continue
+
+            #we will move the maximum number we have to the beginning of 
+            #the array if it's not already there
+            if maxInd!=0:
+                A[:maxInd+1]=reversed(A[:maxInd+1])
+                res.append(maxInd+1) 
+                
+                
+            #we will flip the whole array to make the biggest elemnt at the end
+            A[:end]=reversed(A[:end])
+            res.append(end)
+            #we will move to the next biggest value we can have and repeat the process
+            end-=1
+        return res    
+        
