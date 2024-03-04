@@ -9,3 +9,14 @@ class Solution:
             for i in range(freq):
                 res.append(num)
         return res
+''' optimize a bit of space
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        freq1=Counter(nums1)
+        res=[]
+        for num in nums2:
+            if freq1[num]>0:
+                res.append(num)
+                freq1[num]-=1
+        return res
+'''
