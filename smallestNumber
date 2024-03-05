@@ -1,0 +1,23 @@
+class Solution:
+    def smallestNumber(self, num: int) -> int:
+        
+        if num>0:
+            digit_list = [int(digit) for digit in str(num) if int(digit)]
+            digit_list.sort()
+            zeros=str(num).count('0')
+
+            for i in range(zeros):
+                digit_list.insert(i+1,0)
+            
+            res=int(''.join(map(str, digit_list)))
+        
+        else:
+            num*=-1
+            digit_list = [int(digit) for digit in str(num)]
+            digit_list.sort(reverse=True)
+            res=int(''.join(map(str, digit_list)))*-1
+
+
+        return  res
+
+
