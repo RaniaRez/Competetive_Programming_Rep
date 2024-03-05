@@ -3,9 +3,9 @@ class Solution:
         processorTime.sort()
         tasks.sort(reverse=True)
         min_time=float('-inf')
-        
+
         for i in range(len(processorTime)):
-            time_i = max([time + processorTime[i] for time in tasks[4*i:4*i+4]])
+            time_i = tasks[4*i]+processorTime[i]
             if time_i>min_time:
                 min_time=time_i
         return min_time
