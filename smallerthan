@@ -1,0 +1,15 @@
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        s_nums=sorted(nums)
+        less={}
+        res=[]
+
+        for i, val in enumerate(s_nums):
+            if  not i or val!=s_nums[i-1]: 
+                less[val]=i
+            
+        
+        for i, val in enumerate(nums):
+            res.append(less[val])
+        
+        return res
