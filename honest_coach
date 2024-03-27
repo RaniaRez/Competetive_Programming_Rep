@@ -1,0 +1,13 @@
+n_tests=int(input())
+for test in range(n_tests):
+    n=int(input())
+    a=list(map(int, input().split()))
+    a.sort()
+    min_list=set()
+
+    for i in range(n-1) : 
+        max_val = max(a[0:i+1])
+        min_val = min(a[i+1:n])
+        min_list.add(abs(max_val-min_val))
+
+    print(min(min_list))
