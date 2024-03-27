@@ -35,3 +35,11 @@ Ready to dive in? Here's what you need to do:
    ```bash
    git clone https://github.com/RaniaRez/Competitive_Programming_Rep.git
 
+2. **Understand** the code.
+3. **Close** it and do it your own way.
+
+## Contact
+You can reach out to me on:
+- Email: jf_rezkellah@esi.dz
+- LinkedIn: https://www.linkedin.com/in/rania-fatmazohra-rezkellah-155896212/
+
