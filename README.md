@@ -1,10 +1,37 @@
+# Competitive Programming Solutions in Python
 
-# A2SV Problems solution Repository
+Hey there! Welcome to my competitive programming solutions repository! Here, you'll find a bunch of Python solutions to tackle various programming problems. Whether you're just starting out or you're a seasoned coder, there's something here for everyone.
 
-## Description
+## Table of Contents
 
-This repository contains all the problems solved during the A2SV Software Engineering Program, problems from LeetCode, CodeForces and HackerRank.
+- [Introduction](#introduction)
+- [Topics Covered](#topics-covered)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Programming Language
+## Introduction
 
-* Mainly Python
+Competitive programming is like a sport for the mind where you solve problems with computer programs within certain limits. This repo is all about tackling those challenges with Python, a language known for its simplicity and power.
+
+## Topics Covered
+
+From basic data structures like lists and dictionaries to advanced techniques like dynamic programming, we've got it all covered here:
+
+- Data Structures: Lists, Dictionaries, Sets, Tuples
+- Sorting Algorithms
+- Two Pointers Technique
+- Sliding Window Technique
+- Dynamic Programming
+
+Each problem is neatly categorized, so you can easily find what you're looking for.
+
+## Getting Started
+
+Ready to dive in? Here's what you need to do:
+
+1. **Clone** this repository to your local machine:
+
+   ```bash
+   git clone https://github.com/RaniaRez/Competitive_Programming_Rep.git
+
