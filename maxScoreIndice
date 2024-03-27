@@ -1,0 +1,20 @@
+class Solution:
+    def maxScoreIndices(self, nums: List[int]) -> List[int]:
+        #we initialize our max score with the sore of the 0th index 
+        #which will simlpy be the sum of all the elems
+
+        score = max_score = sum(nums)
+        highest_scores = [0]
+        #here we set the 0th index to 1 so that after in appending the highest scores index 
+        #we will append the right index not its previous one
+        for idx, val in enumerate(nums, 1):
+            #if the value is 0 then the left part will be incremented by one, if it's one then the right part
+            #will be decremented by one so is the score
+            score += 1 if val == 0 else -1
+            if score > max_score:
+                highest_scores = [idx]
+                max_score = score
+            elif score == max_score:
+                highest_scores.append(idx)
+        
+        return highest_scores
