@@ -1,0 +1,25 @@
+n , m = map(int,input().split())
+
+c = list(map(int, input().split()))
+t = list(map(int , input().split()))
+
+ans = []
+
+i = 0
+j = 0 
+min_index = 0
+
+
+while i < n : 
+    min_diff = -1 
+
+    for j in range(min_index,m) :
+        diff = abs(c[i] - t[j])
+        if diff <= min_diff or min_diff == -1 :
+            min_diff = diff
+            min_index = j
+        else :
+            break
+    ans.append(min_diff)
+    i += 1 
+print(max(ans))
