@@ -1,0 +1,15 @@
+n = int(input())
+arr = list(map(int,input().split()))
+arr.sort()
+sol = []
+
+for i in range(n//2):
+    sol.append(arr[i])
+    sol.append(arr[-1-i])
+
+
+if n%2 != 0:
+    sol.append(arr[n//2])
+
+sol = map( str ,sol)
+print(' '.join(sol))
