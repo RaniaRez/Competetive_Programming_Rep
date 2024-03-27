@@ -7,8 +7,7 @@ Hey there! Welcome to my competitive programming solutions repository! Here, you
 - [Introduction](#introduction)
 - [Topics Covered](#topics-covered)
 - [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
+- [Contact] (#Contact).
 
 ## Introduction
 
