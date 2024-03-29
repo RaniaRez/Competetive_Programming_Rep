@@ -1,0 +1,15 @@
+class Solution:
+    def shiftingLetters(self, s: str, shifts: List[int]) -> str:
+        n=len(s)
+        lst=list(s)
+        suff=shifts
+        
+        for i in range(n-2, -1, -1):
+            suff[i]+=suff[i+1]
+        
+        for i in range(n):
+            ord_=ord(lst[i])+suff[i]
+            cir=chr(((ord_ - ord('a')) % 26) + ord('a'))
+            lst[i]=cir
+        
+        return ''.join(lst)
