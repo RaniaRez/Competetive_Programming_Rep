@@ -1,0 +1,28 @@
+class Solution:
+    def minSizeSubarray(self, nums: List[int], target: int) -> int:
+        
+        n=len(nums)
+        loops=target//sum(nums)
+        target%=sum(nums)
+        best=float('inf')
+        current=0
+        hm={}
+
+        if not target:
+            return n*loops
+        
+        for i in range(n*2):
+            current+=nums[i%n]
+
+            if current-target in hm:
+                best=min(best, i-hm[current-target])
+            
+            hm[current]=i
+        
+        return (best+loops*n if best!=float('inf') else -1)
+        
+
+            
+        
+
+        
