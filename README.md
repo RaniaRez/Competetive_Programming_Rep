@@ -21,6 +21,9 @@ From basic data structures like lists and dictionaries to advanced techniques li
 - Sorting Algorithms
 - Two Pointers Technique
 - Sliding Window Technique
+- Prefix sums
+- Stacks,queues
+- Linked lists..
 - Dynamic Programming
 
 Each problem is neatly categorized, so you can easily find what you're looking for.
