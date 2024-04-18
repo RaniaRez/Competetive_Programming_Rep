@@ -1,0 +1,27 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy=ListNode()
+        dummy.next=head
+        prev=head
+        cur=head.next
+        while cur:
+            if prev.val<=cur.val:
+                prev=prev.next
+                cur=cur.next
+                
+            else:
+                ptr=dummy
+                while ptr.next.val<cur.val:
+                    ptr=ptr.next
+                
+                prev.next=cur.next
+                cur.next=ptr.next
+                ptr.next=cur
+            
+            cur=prev.next
+
+        return dummy.next
