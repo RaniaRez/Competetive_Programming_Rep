@@ -1,0 +1,25 @@
+class Solution(object):
+    def deleteDuplicates(self, head):
+        dummy=ListNode()
+        dummy.next=head
+        hm={}
+        cur=head
+        ptr=dummy
+        prev=None
+        
+        while cur:
+            hm[cur.val]=hm.get(cur.val, 0) + 1
+            cur=cur.next
+        
+        while ptr:
+            prev=ptr
+            ptr=ptr.next
+            if ptr:
+                if hm[ptr.val]>1:
+                    prev.next=ptr.next
+                    ptr=prev
+        
+        return dummy.next
+
+        
+
