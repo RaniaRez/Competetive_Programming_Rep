@@ -1,0 +1,21 @@
+class Solution:
+    
+    def predictTheWinner(self, nums: List[int]) -> bool:
+        cache={}
+        
+        def turn (l, r, player):
+    
+            if (l,r, player) in cache: return cache[(l,r, player)]
+            if l > r:
+                return 0
+            
+            if player:
+                 cache[(l,r, player)] = max(nums[l]+turn(l+1,r,not player), nums[r]+ turn(l, r-1, not player))
+            else:
+                 cache[(l,r, player)] = min(-nums[l]+turn(l+1,r,not player), -nums[r]+ turn(l, r-1, not player))
+            return  cache[(l,r, player)]
+
+        return turn(0, len(nums)-1, True) >= 0
+
+
+    
