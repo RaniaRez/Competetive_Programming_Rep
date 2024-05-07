@@ -1,0 +1,14 @@
+class Solution:
+    def invert(self,s: str) -> str:
+        return ''.join(["1" if x=="0" else "0" for x in s])
+
+    def helper(self, n: int, k: int) -> str:
+        if n == 1:
+            return "0"
+        else:
+            prev = self.helper(n-1,k)
+            res = prev + "1" + self.invert(prev)[::-1]
+            return res 
+    
+    def findKthBit(self, n: int, k: int) -> str:
+        return self.helper(n, k)[k-1]
