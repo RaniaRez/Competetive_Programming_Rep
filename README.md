@@ -24,7 +24,11 @@ From basic data structures like lists and dictionaries to advanced techniques li
 - Prefix sums
 - Stacks,queues
 - Linked lists..
-- Dynamic Programming
+- Recursion
+- Binary search
+- Binary trees
+- Backtracking
+- Dynamic Programming...
 
 Each problem is neatly categorized, so you can easily find what you're looking for.
 
