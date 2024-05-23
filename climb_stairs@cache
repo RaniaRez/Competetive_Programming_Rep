@@ -1,0 +1,17 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        cache={}
+        def calculate(n):
+            if n in cache:
+                return cache[n]
+            if not n:
+                return 0
+            if n == 1:
+                return 1
+            if n == 2:
+                return 2
+            
+            cache[n] = calculate(n-1) + calculate(n-2)
+            return cache[n] 
+        
+        return calculate(n)
