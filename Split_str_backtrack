@@ -1,0 +1,14 @@
+class Solution:
+    def splitString(self, s: str) -> bool:
+    
+        def backtrack(i: int, k: int, prev: int) -> bool:
+            if i == len(s):
+                return k >= 2
+            for j in range(i, len(s)):
+                cur = int(s[i:j + 1])
+                if prev == math.inf or cur == prev - 1:
+                    if backtrack(j + 1, k + 1, cur):
+                        return True
+            return False
+        
+        return backtrack(0, 0, math.inf)
