@@ -1,0 +1,17 @@
+class Solution:
+    def longestNiceSubstring(self, s: str) -> str:
+        def solve(l, r):
+            if l > r:
+                return ""
+            
+            check = {s[i] for i in range(l, r + 1)}
+            for i in range(l, r + 1):
+                lett = s[i]
+                if lett.swapcase() not in check:
+                    s1 = solve(l, i - 1)
+                    s2 = solve(i + 1, r)
+                    if len(s2) > len(s1):
+                        return s2
+                    return s1
+            return s[l : r + 1]
+        return solve(0, len(s) - 1)
