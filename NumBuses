@@ -1,0 +1,25 @@
+class Solution:
+    def numBusesToDestination(self, routes: List[List[int]], source: int, target: int) -> int:
+        if source == target:
+            return 0
+        graph = defaultdict(list)
+        for bus, route in enumerate(routes):
+            for stop in route:
+                graph[stop].append(bus)
+        que = deque(graph[source])
+        visited = set(graph[source])
+        level = 0
+        while que:
+            level+=1
+            length = len(que)
+            for _ in range(length):
+                bus = que.popleft()
+                for stop in routes[bus]:
+                    if stop == target:
+                        return level
+                    for next in graph[stop]:
+                        if next in visited:
+                            continue
+                        que.append(next)
+                        visited.add(next)
+        return -1
