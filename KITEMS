@@ -1,0 +1,12 @@
+class Solution:
+    def kItemsWithMaximumSum(self,numOnes, numZeros, numNegOnes, k):
+        onesPicked = min(k, numOnes)
+        k -= onesPicked
+        if k == 0:
+            return onesPicked
+        zerosPicked = min(k, numZeros)
+        k -= zerosPicked
+        if k == 0:
+            return onesPicked
+        negativeOnesPicked = min(k, numNegOnes)
+        return onesPicked - negativeOnesPicked
