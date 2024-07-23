@@ -1,0 +1,16 @@
+class Solution:
+    def minMoves(self, target: int, maxDoubles: int) -> int:
+        op = 0
+        while maxDoubles and  target > 1:
+
+            if not target%2 and maxDoubles :
+                op += 1
+                maxDoubles -= 1
+                target //= 2
+            else:
+                target -= 1
+                op += 1
+        if target > 1:
+            op += target-1
+
+        return op
