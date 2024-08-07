@@ -1,0 +1,28 @@
+class Solution:
+    def loudAndRich(self, richer, quiet):
+        n, dict1 = len(quiet), defaultdict(list)
+
+        for i,j in richer:
+            dict1[j].append(i)
+
+        def dfs(i):
+            stack, visited = [i], set([i])
+
+            while stack:
+                node = stack.pop(0)
+
+                for neighbor in dict1[node]:
+                    if neighbor not in visited:
+                        visited.add(neighbor)
+                        stack.append(neighbor)
+
+            return visited 
+
+        answer = [0]*n 
+
+        for i in range(n):
+            result = list(dfs(i))
+            result.sort(key = lambda x: quiet[x])
+            answer[i] = result[0]
+
+        return answer 
