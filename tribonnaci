@@ -1,0 +1,8 @@
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        zero, one, two = 0,1,1
+        for _ in range(n): 
+            three = zero + one + two
+            zero,one,two = one,two,three
+        
+        return zero
