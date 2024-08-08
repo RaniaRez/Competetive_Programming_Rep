@@ -1,0 +1,10 @@
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        if n < 3:
+            return 0 if not n else 1
+        zero, one, two = 0, 1, 1
+
+        for i in range (2, n):
+            zero, one, two = one, two, zero + one + two
+        
+        return two
