@@ -1,0 +1,18 @@
+from functools import lru_cache
+
+class Solution:
+    
+    def knapSack(self, W, wt, val, n):
+        @lru_cache(None)
+        def solve(index, currentWeight):
+            if index == n or currentWeight > W:
+                return 0
+
+            no = solve(index + 1, currentWeight)
+            yes = 0
+            if currentWeight + wt[index] <= W:
+                yes = val[index] + solve(index + 1, currentWeight + wt[index])
+            
+            return max(yes, no)
+        
+        return solve(0, 0)
