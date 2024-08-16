@@ -1,0 +1,14 @@
+class Solution:
+    def minPathSum(self, grid: List[List[int]]) -> int:
+        dp = {}
+        n, m = len(grid), len(grid[0])
+        def help(x, y):
+            if x >= n or y >= m:
+                return float('inf')
+            if x == n - 1 and y == m - 1:
+                return grid[x][y]
+            if (x, y) in dp:
+                return dp[(x, y)]
+            dp[(x,y)] = grid[x][y] + min(help(x, y+1),  help(x + 1, y))
+            return dp[(x,y)] 
+        return help(0,0)
