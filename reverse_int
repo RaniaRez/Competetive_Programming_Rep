@@ -1,0 +1,7 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        sign = 1 if x > 0 else -1
+        x_inv = int(str(abs(x))[::-1])* sign
+        return x_inv if -2**31<=x_inv<2**31 else 0
+
+        
