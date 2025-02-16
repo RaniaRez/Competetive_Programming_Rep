@@ -1,0 +1,5 @@
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+       unique_elem = list(set(nums)) 
+       unique_elem.sort(reverse = True) 
+       return unique_elem[2] if len(unique_elem)>2 else unique_elem[0]
